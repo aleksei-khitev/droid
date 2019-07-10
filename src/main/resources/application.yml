@@ -1,0 +1,17 @@
+###
+server:
+  port: 9090
+spring:
+  jmx:
+    enabled: false
+  datasource:
+    jndi-name: java:jboss/datasources/droidH2DS
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+format_sql: true

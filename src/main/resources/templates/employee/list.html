@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<head th:include="fragments/layout :: headerFragment">
+    <title id="pageTitle">Сотрудники</title>
+</head>
+<body>
+<div class="main-content">
+    <h1>Сотрудники</h1>
+    <h2>Список сотрудников</h2>
+    <hr/>
+    <table>
+        <tr class="table_header">
+            <th class="table_header">ID сотрудника в базе</th>
+            <th class="table_header">Имя сотрудника</th>
+        </tr>
+        <tr th:each="employee  : ${employees}" >
+            <td class="table_cell_info"><span th:text="${employee.id}"></span></td>
+            <td class="table_cell_info"><span th:text="${employee.name}"></span></td>
+        </tr>
+    </table>
+    <a th:href="@{/employee/add}"><button class="on_page_action">Добавить</button></a>
+    <hr/>
+    <a th:href="@{/}"><button class="on_page_action">На главную страницу</button></a>
+</div>
+
+</body>
+</html>

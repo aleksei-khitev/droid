@@ -1,0 +1,67 @@
+group 'ru.akhitev.seng'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+buildscript {
+    ext['springBootVersion'] = '2.0.2.RELEASE'
+    repositories {
+        maven { url "http://repo.spring.io/libs-release" }
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+ext {
+    springBootVersion = '2.0.2.RELEASE'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+war {
+    baseName = 'droid'
+    version = '1.0'
+    enabled = true
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io/libs-release" }
+}
+
+dependencies {
+    // db
+    compile "org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}"
+    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.0.7.RELEASE'
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '+'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '+'
+    compile group: 'com.h2database', name: 'h2', version: '+'
+
+    // web
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}"
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}"){
+        exclude group: "org.springframework.boot", module: "spring-boot-starter-tomcat"
+    }
+    compile "org.springframework.boot:spring-boot-starter-undertow:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-aop:${springBootVersion}"
+    testCompile("junit:junit")
+    
+    // google
+    compile 'com.google.http-client:google-http-client:1.24.1'
+    compile group: 'com.google.oauth-client', name: 'google-oauth-client-java6', version: '1.28.0'
+    compile group: 'com.google.apis', name: 'google-api-services-oauth2', version: 'v2-rev149-1.25.0'
+    compile group: 'com.google.apis', name: 'google-api-services-sheets', version: 'v4-rev570-1.25.0'
+    
+    // excel
+    implementation     group: 'org.apache.poi',            name: 'poi',                        version: '4.0.1'
+    implementation     group: 'org.apache.poi',            name: 'poi-ooxml',                  version: '4.0.1'
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<head th:include="fragments/layout :: headerFragment">
+    <title id="pageTitle">Загрузка прогресса</title>
+</head>
+<body>
+<div class="main-content">
+    <h1>Обработка среднего срока</h1>
+    <h2>Выбор файла</h2>
+    <hr/>
+    <form action="#" th:action="@{/average/process}" method="post" enctype="multipart/form-data">
+        <input type="file" style="textInput" name="file" id="file">
+        <input type="submit" class="on_page_action" value="Обработать"/>
+    </form>
+    <hr/>
+    <a th:href="@{/}"><button class="on_page_action">На главную страницу</button></a>
+</div>
+
+</body>

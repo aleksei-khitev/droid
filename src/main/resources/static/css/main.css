@@ -1,0 +1,64 @@
+body {
+    background-color: #000000;
+    font-size: 18px;
+    font-family: Decorative;
+    color: #99FFFF;
+    margin: 10px;
+}
+
+h1 {
+    font-family: Decorative;
+    font-size:  30px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: #8080EE;
+}
+
+h2 {
+    font-family: Decorative;
+    font-size:  24px;
+    margin: 0px;
+    padding: 0px;
+    color: #B568F9;
+}
+
+h3 {
+    font-family: Decorative;
+    font-size:  20px;
+    margin: 0px;
+    padding: 0px;
+    color: #4CAF50;
+}
+
+.table_header {
+    padding: 15px;
+    text-align: center;
+    border-style: inset;
+    border-color: #FFFF66;
+    color: #FFFF66;
+    border-radius: 8px;
+}
+
+.table_cell_info {
+    padding: 15px;
+    text-align: left;
+    border-style: inset;
+    border-width: 1px 1px 1px 1px;
+    border-color: #4CAF50;
+}
+
+.textInput {
+	background-color: black;
+	border-color: gray;
+	text-align: right;
+	color: white;
+}
+
+.on_page_action {
+	background-color: #572449;
+    border-color: #201A4B;
+    font-size:  20px;
+	color: #FFFF66;
+	border-radius: 8px;
+}

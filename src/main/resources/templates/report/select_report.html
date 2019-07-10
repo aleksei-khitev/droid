@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<head th:include="fragments/layout :: headerFragment">
+    <title id="pageTitle">SEng Droid</title>
+</head>
+<body>
+    <h1>Формирование отчета</h1>
+    <h2>Выбор отчета</h2>
+    <hr/>
+    <a th:href="@{/report/make_report_for_current_period}"><button class="on_page_action">Отчет за текущий период</button></a><br/>
+    <a th:href="@{/report/make_report_for_current_period_with_step7}"><button class="on_page_action">Отчет за текущий период (с шагом в 7 дней)</button></a><br/>
+    <a th:href="@{/report/make_report_for_whole_period}"><button class="on_page_action">Отчет за весь период</button></a>
+    <hr/>
+    <a th:href="@{/}"><button class="on_page_action">На главную страницу</button></a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<head th:include="fragments/layout :: headerFragment">
+    <title id="pageTitle">Загрузка прогресса</title>
+</head>
+<body>
+<div class="main-content">
+    <h1>Загрузка прогресса</h1>
+    <h2>Выбор даты</h2>
+    <hr/>
+    <form action="#" th:action="@{/progress/load}" method="post">
+        <input type="date" style="textInput" name="date" id="date">
+        <input type="submit" class="on_page_action" value="Загрузить"/>
+    </form>
+    <hr/>
+    <a th:href="@{/}"><button class="on_page_action">На главную страницу</button></a>
+</div>
+
+</body>

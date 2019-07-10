@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<head th:include="fragments/layout :: headerFragment">
+    <title id="pageTitle">Загрузка прогресса</title>
+</head>
+<body>
+
+<div class="main-content">
+    <h1>Загрузка прогресса</h1>
+    <h2>Данные в Google таблице</h2>
+    <hr/>
+    <table>
+        <tr>
+            <th class="table_header">ФИО/ статус</th>
+            <th class="table_header">Взято в работу</th>
+            <th class="table_header">Отказ наш</th>
+            <th class="table_header">Резерв, все причины </th>
+            <th class="table_header">Выведено в работу</th>
+            <th class="table_header">Доля вывода %</th>
+            <th class="table_header">Доля отказов</th>
+            <th class="table_header">Отказ кандидата</th>
+            <th class="table_header">Ср срок вывода, дни</th>
+            <th class="table_header">Индекс качества</th>
+        </tr>
+        <tr th:each="progress  : ${progressForLoad}">
+            <td class="table_cell_info"><span th:text="${progress.employee.name}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.tookInWork}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.ourRefuges}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.allCausesReserve}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.launchedInWork}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.getFormattedLaunchPortion()}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.getFormattedRefugesPortion()}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.candidateRefuges}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.launchesAverageTerm}"></span></td>
+            <td class="table_cell_info"><span th:text="${progress.getFormattedQualityIndex()}"></span></td>
+        </tr>
+    </table>
+    <a th:href="@{/progress/load_result}"><button class="on_page_action">Далее</button></a>
+    <hr/>
+    <a th:href="@{/}"><button class="on_page_action">На главную страницу</button></a>
+</div>
+
+</body>

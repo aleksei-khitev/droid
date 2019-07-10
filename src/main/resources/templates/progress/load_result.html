@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<head th:include="fragments/layout :: headerFragment">
+    <title id="pageTitle">Прогресс загружен</title>
+</head>
+<body>
+    <h1>Загрузка прогресса</h1>
+    <h2>Прогресс сохранен</h2>
+    <hr/>
+    <a th:href="@{/report/main}"><button class="on_page_action">Формирование отчета</button></a><br/>
+    <hr/>
+    <a th:href="@{/}"><button class="on_page_action">На главную страницу</button></a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<head th:include="fragments/layout :: headerFragment">
+    <title id="pageTitle">Сотрудники</title>
+</head>
+<body>
+<h1>Сотрудники</h1>
+<h2>Добавление сотрудника</h2>
+<div class="main-content">
+    <hr/>
+    <form action="#" th:action="@{/employee/save}" method="post">
+        <input type="text" style="textInput" name="name" id="name">
+        <input type="submit"  class="on_page_action" value="Добавить"/>
+    </form>
+    <hr/>
+    <a th:href="@{/}"><button class="on_page_action">На главную страницу</button></a>
+</div>
+
+</body>
